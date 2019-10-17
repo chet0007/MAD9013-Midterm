@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=PT+Serif|Roboto&display=swap');
+
 html {
     box-sizing: border-box;
     font-size: 16px;
@@ -11,74 +13,210 @@ html {
 
 body {
     /*font-family: font stack required for body text */
+    font-weight: 300;
+    font-family: 'Roboto', Arial, Helvetica, sans-serif;
     font-size: 1rem;
     line-height: 1.4;
     margin: 0;
     padding: 0;
+    display: flex;
+    justify-content: center;
 }
 
 h1, h2, h3, h4 {
     /*font-family: font stack required for headings */
+    font-family: 'Pt Serif', 'MS Serif', 'New York', serif;
 }
-
+h1{
+    font-size: 3.052rem;
+}
+h2{
+    font-size: 2.441rem;
+}
+h3{
+    font-size: 1.953rem;
+}
+h4{
+    font-size: 1.563rem;
+}
 p {
-    
+    font-size: 1rem;
+    margin: 0srem 0rem;
+    color: hsl(204, 75%, 0%);
 }
 
 .container {
+    max-width: 1500px;
+    padding: 0.5rem 0.5rem;
     
 }
 
 .subnav {
+    padding: 1rem 0.5rem;
+    background-color: hsl(204, 75%, 49%);
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: flex-start;
+    border: 3px solid hsl(205, 75%, 0%);
+    border-radius: 0px;
+    margin: 0.25rem 0rem;
     
 }
 
 .subnav a {
-    
+    padding: 0rem 0.5rem;
+    color: hsl(204, 75%, 100%);
+    font-weight: 700;
+    font-size: 1rem;
+  
 }
 
 .mainnav {
-    
+    /* padding: 1rem 1rem; */
+    background-color: hsl(204, 75%, 49%);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: flex-start;
+    border: 3px solid hsl(205, 75%, 0%);
+    border-radius: 0px;
+    margin: 0.25rem 0rem;
 }
 
 .mainnav a {
-    
+    color: hsl(204, 45%, 100%);
+    font-weight: 700;
+    font-size: 1.5rem;  
+    text-decoration: none;  
+    padding: 1rem;
+    flex-grow: 1;
+    text-align: center;
+}
+
+.mainnav a:hover {
+    color: hsl(204, 75%, 35%);
+    background-color: hsl(204, 75%, 85%);
+    font-weight: 700;
+    font-size: 1.5rem;  
+    text-decoration: none;  
+}
+.mainnav a:active {
+    color: hsl(204, 75%, 100%);
+    background-color: hsl(204, 75%, 35%);
+    font-weight: 700;
+    font-size: 1.5rem;  
+    text-decoration: none;  
 }
 
 .masthead {
+ /* place where MAD&D Times and Logo is  */
+    padding: 0rem 0rem;
+    border: 3px solid hsl(205, 75%, 0%);
+    border-radius: 0px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     
 }
 
 .times-logo {
-    
+/* main logo pic */
+  width: 100%;
 }
 
 .masthead h1 {
+    color: hsl(204, 75%, 90%); 
+    background-color: hsl(204, 75%, 35%);
+    font-weight: 700;
+    font-size: 2rem;
+    margin: 0rem 0rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
     
 }
 
 .content {
+    /* contains all paragraphs and titles */
     
+    border: 3px solid hsl(205, 75%, 0%);
+    border-radius: 0px;
+    margin: 0rem 0rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+    grid-template-areas: 
+    "article1 article2"
+    "article1 article3"
+    
+
+    /* ???????????????????????????? */
+}
+@media (max-width:768px) {
+    .content{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    }
+
 }
 
 .content .story {
+    /* all stories */
+    padding: 0.5rem 0.5rem;
+    margin: 0.5rem 0.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    background-color: hsl(204, 75%, 85%);
+    /* border: 3px solid hsl(205, 75%, 0%); */
+    border-radius: 0px;
+
     
+    /* ?????????????????????????? */
+    
+}
+.container:nth-child(1) {
+    grid-area: article2;
+
+}
+
+.container:last-child {
+    grid-area: article3;
 }
 
 .story.lead-story {
-    
+    /* first story */
+    grid-area:  article1;
+    padding: 0rem 0.5rem;
+    display: flex;
+    justify-content: flex-start;
+    background-color: hsl(204, 75%, 85%);
+  
+/* ?????????????????????? */
 }
 
-h1.story-title {
-    
+h2.story-title {
+    margin: 0.5rem 0rem;
+    /* padding: 1rem 1rem; */
+    background-color: hsl(204, 75%, 35%); 
+    color: hsl(204, 75%, 100%);
+    display: flex;
+    justify-content: center;
+   
 }
 
 .story img {
-    
+    border: 3px solid hsl(205, 75%, 0%);
+    border-radius: 0px;
+    width: 100%;
 }
 
 .story p {
-    
+    /* stuff inside the story (the paragraps) */
+    margin: 1rem 1rem;
 }
 
 .story blockquote {
@@ -94,22 +232,33 @@ h1.story-title {
 }
 
 .story p.byline {
-    
+    /* body of the author info */
+    display: flex;
+    justify-content: flex-end;
+    text-shadow: 2px 2px hsl(204, 75%, 90%);
 }
 
 p.byline span.author {
-    
+    /* author name  */
+    font-weight: bold;
 }
 
-p.byline span.pub {
-    
+p.byline span.pub {  
+    /* time of author */
+    font-weight: bold;
 }
 
 .foot {
-    
+    padding: 0.5rem 1rem;
+    margin: .5rem 0rem;
+    background-color: hsl(204, 75%, 35%); 
+    border: 3px solid hsl(205, 75%, 0%);
+    border-radius: 0px;
 }
 
 .foot p
 {
-    
+    margin: 1rem 0;
+    font-size: 1rem;
+    color: hsl(204, 75%, 100%);
 }
